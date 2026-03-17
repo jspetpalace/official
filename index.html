@@ -6,19 +6,16 @@
 
 <title>J’s Pet Palace</title>
 
-<!-- FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
 body {
     font-family: 'Cinzel Decorative', serif;
     background: black;
@@ -26,17 +23,17 @@ body {
     overflow-x: hidden;
 }
 
-/* BACKGROUND GLOW */
+/* REVERSED BACKGROUND (PINK → BLACK) */
 body::before {
     content: "";
     position: fixed;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 80% 30%, rgba(254,20,202,0.25), transparent 60%);
+    background: radial-gradient(circle at 80% 30%, #fe14ca, transparent 70%);
     z-index: -1;
 }
 
-/* NAVBAR */
+/* NAV */
 .navbar {
     position: fixed;
     top: 0;
@@ -50,15 +47,15 @@ body::before {
 }
 
 .navbar a {
-    text-decoration: none;
     color: #fe14ca;
+    text-decoration: none;
     padding: 10px 15px;
     border-radius: 8px;
     background: linear-gradient(145deg, #111, #222);
     box-shadow: 2px 2px 6px #000, -2px -2px 6px #333;
 }
 
-/* MAIN CONTAINER */
+/* CONTAINER */
 .container {
     padding-top: 100px;
     width: 90%;
@@ -66,7 +63,7 @@ body::before {
     margin: auto;
 }
 
-/* RIGHT SIDE IMAGE (FIXED) */
+/* SIDE IMAGE */
 .side-image {
     position: fixed;
     right: 10px;
@@ -78,25 +75,39 @@ body::before {
     width: 100%;
 }
 
-/* BANNERS */
-.banner {
-    width: 100%;
-    height: 120px;
-    margin: 20px 0;
+/* MAIN TOP BANNER (BIGGER) */
+.main-banner {
+    height: 160px;
     background: #111;
     border: 1px solid #fe14ca;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 15px;
 }
 
-/* SCROLL BOX */
-.scroll-box {
-    height: 300px;
-    overflow-y: auto;
+/* SECOND BANNER (SMALLER) */
+.sub-banner {
+    height: 90px;
     background: #111;
     border: 1px solid #fe14ca;
+    margin-bottom: 20px;
+}
+
+/* SCROLL BOX (THINNER + CENTERED RECTANGLE) */
+.scroll-box {
+    width: 70%;
+    height: 220px;
+    margin: auto;
+    overflow-y: scroll;
     padding: 20px;
+    background: #111;
+    border: 1px solid #fe14ca;
+    text-align: left;
+}
+
+/* TEXT INSIDE SCROLL */
+.scroll-box p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 /* VIDEO */
@@ -137,7 +148,7 @@ body::before {
     white-space: nowrap;
     font-size: 12px;
     color: #fe14ca;
-    animation: scrollText 25s linear infinite;
+    animation: scrollText 30s linear infinite;
 }
 
 .top-border {
@@ -160,7 +171,6 @@ body::before {
 
 <body>
 
-<!-- NAV -->
 <div class="navbar">
     <a href="#">Home</a>
     <a href="#">Pet Grooming</a>
@@ -169,52 +179,57 @@ body::before {
     <a href="#">Meet Your Groomer</a>
 </div>
 
-<!-- BORDER TEXT -->
 <div class="border-text top-border">
-    Welcome to J’s Pet Palace — Where Every Pet Feels Like Family • Welcome to J’s Pet Palace — Where Every Pet Feels Like Family •
+Welcome to J’s Pet Palace — Where Every Pet Feels Like Family • Welcome to J’s Pet Palace — Where Every Pet Feels Like Family •
 </div>
 
 <div class="border-text bottom-border">
-    Welcome to J’s Pet Palace — Where Every Pet Feels Like Family • Welcome to J’s Pet Palace — Where Every Pet Feels Like Family •
+Welcome to J’s Pet Palace — Where Every Pet Feels Like Family • Welcome to J’s Pet Palace — Where Every Pet Feels Like Family •
 </div>
 
-<!-- SIDE IMAGE -->
 <div class="side-image">
-    <img src="images/main-image.png" alt="Main Image">
+    <img src="images/main-image.png">
 </div>
 
-<!-- CONTENT -->
 <div class="container">
 
-    <!-- BANNERS -->
-    <div class="banner">Banner Placeholder 1</div>
-    <div class="banner">Banner Placeholder 2</div>
+    <!-- MAIN BANNER -->
+    <div class="main-banner"></div>
 
-    <!-- SCROLL -->
+    <!-- SECOND BANNER -->
+    <div class="sub-banner"></div>
+
+    <!-- SCROLL BOX -->
     <div class="scroll-box">
+
         <p>
-        I look forward to pampering your furry friends and providing them with the exceptional care they deserve. Whether it's a simple nail trim or a full groom, I'm here to make your pet look and feel their best. Thank you for choosing me for your pet grooming needs.
+        I look forward to pampering your furry friends and providing them with the exceptional care they deserve.
+        Whether it's a simple nail trim or a full groom, I'm here to make your pet look and feel their best.
+        Thank you for choosing me for your pet grooming needs.
         </p>
 
         <br><br>
 
+        <p><strong>Services Offered</strong></p>
+
         <p>
-        • Full Groom  
-        • Bath & Brush  
-        • Ear Cleaning  
-        • Nail Trim / File  
-        • Haircuts  
-        • Bows (upon request)  
-        • Deshed Bath  
-        • Oatmeal Bath  
-        • Oxy Bath  
+        Full Groom<br>
+        Bath & Brush<br>
+        Ear Cleaning<br>
+        Nail Trim / File<br>
+        Haircuts<br>
+        Bows (upon request)<br>
+        Deshed Bath<br>
+        Oatmeal Bath<br>
+        Oxy Bath
         </p>
+
     </div>
 
     <!-- VIDEO -->
     <div class="video">
         <video width="100%" controls>
-            <source src="videos/sample.mp4" type="video/mp4">
+            <source src="videos/sample.mp4">
         </video>
     </div>
 
@@ -224,17 +239,14 @@ body::before {
     </div>
 
     <!-- EXTRA BANNER -->
-    <div class="banner">Bottom Banner</div>
+    <div class="sub-banner"></div>
 
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
-    <p>Follow Us</p>
     <p>Instagram | Facebook</p>
 </div>
 
-<!-- BACK TO TOP -->
 <button onclick="topFunction()" id="topBtn">Top</button>
 
 <script>
