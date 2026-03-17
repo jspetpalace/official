@@ -156,10 +156,10 @@ body {
     white-space: nowrap;
 }
 
-.top { top: 0; left: 0; animation: topMove 80s linear infinite; }
+.top { top: 0; left: 0; animation: topMove 18s linear infinite; }
 .right { right: 0; top: 0; writing-mode: vertical-rl; animation: rightMove 80s linear infinite; }
-.bottom { bottom: 0; right: 0; animation: bottomMove 80s linear infinite; }
-.left { left: 0; bottom: 0; writing-mode: vertical-rl; animation: leftMove 80s linear infinite; }
+.bottom { bottom: 0; right: 0; animation: bottomMove 18s linear infinite; }
+.left { left: 0; bottom: 0; writing-mode: vertical-rl; animation: leftMove 18s linear infinite; }
 
 @keyframes topMove {
     from { transform: translateX(0); }
@@ -172,8 +172,8 @@ body {
 }
 
 @keyframes bottomMove {
-    from { transform: translateX(0); }
-    to { transform: translateX(50%); }
+    from { transform: translateX(50%); }
+    to { transform: translateX(0); }
 }
 
 @keyframes leftMove {
