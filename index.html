@@ -21,8 +21,8 @@ body {
     color: white;
     overflow-x: hidden;
 
-    /* LEFT → RIGHT FADE */
-    background: linear-gradient(to right, rgba(254,20,202,0.35), black 60%);
+    /* subtle pink → black fade */
+    background: linear-gradient(to right, #fe14ca20 0%, black 25%);
 }
 
 /* NAV */
@@ -33,7 +33,7 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 15px;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.95);
     border-bottom: 1px solid #fe14ca;
     z-index: 1000;
 }
@@ -42,16 +42,16 @@ body {
     color: #fe14ca;
     text-decoration: none;
     padding: 10px 15px;
-    border-radius: 8px;
-    background: linear-gradient(145deg, #111, #222);
-    box-shadow: 2px 2px 6px #000, -2px -2px 6px #333;
+    border-radius: 6px;
+    background: #111;
+    border: 1px solid #fe14ca;
 }
 
 /* CONTAINER */
 .container {
     padding-top: 100px;
     width: 90%;
-    max-width: 900px;
+    max-width: 800px;
     margin: auto;
 }
 
@@ -67,49 +67,43 @@ body {
     width: 100%;
 }
 
-/* MAIN BANNER */
+/* BANNERS */
 .main-banner {
     height: 160px;
-    background: #111;
     border: 1px solid #fe14ca;
     margin-bottom: 15px;
 }
 
-/* SECOND BANNER */
 .sub-banner {
     height: 90px;
-    background: #111;
     border: 1px solid #fe14ca;
     margin-bottom: 30px;
 }
 
-/* STACKED TEXT FLOW */
-.flow-text {
-    text-align: left;
+/* BORDERED SECTIONS */
+.section-box {
+    border: 1px solid #fe14ca;
+    padding: 20px;
     margin: 30px auto;
-    width: 70%;
+    width: 75%;
+    text-align: center;
 }
 
-/* INDIVIDUAL LINE STYLE */
-.flow-text div {
-    margin: 12px 0;
-    font-size: 18px;
+/* TEXT STYLE */
+.section-box div {
+    margin: 10px 0;
+    font-size: 16px;
 
-    /* EMBOSSED / GLOW EFFECT */
     color: white;
     text-shadow:
-        1px 1px 0 #000,
-        0 0 5px #fe14ca,
-        0 0 10px rgba(254,20,202,0.6);
+        0 0 1px white,   /* thin white outline */
+        0 0 3px #fe14ca; /* subtle glow */
 }
 
-/* SERVICES */
-.services {
-    margin-top: 30px;
-}
-
-.services div {
-    margin: 10px 0;
+/* SERVICES LIST */
+.services-title {
+    margin-top: 20px;
+    font-weight: bold;
 }
 
 /* VIDEO */
@@ -144,28 +138,39 @@ body {
     cursor: pointer;
 }
 
-/* BORDER TEXT */
-.border-text {
+/* BORDER SCROLL TEXT */
+.scroll-path {
     position: fixed;
+    font-size: 11px;
+    color: white;
+    text-shadow: 0 0 2px #fe14ca;
     white-space: nowrap;
-    font-size: 12px;
-    color: #fe14ca;
-    animation: scrollText 35s linear infinite;
+    pointer-events: none;
 }
 
-.top-border {
-    top: 0;
-    width: 200%;
-}
+.top { top: 0; left: 0; animation: topMove 40s linear infinite; }
+.right { right: 0; top: 0; writing-mode: vertical-rl; animation: rightMove 40s linear infinite; }
+.bottom { bottom: 0; right: 0; animation: bottomMove 40s linear infinite; }
+.left { left: 0; bottom: 0; writing-mode: vertical-rl; animation: leftMove 40s linear infinite; }
 
-.bottom-border {
-    bottom: 0;
-    width: 200%;
-}
-
-@keyframes scrollText {
+@keyframes topMove {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
+}
+
+@keyframes rightMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50%); }
+}
+
+@keyframes bottomMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(50%); }
+}
+
+@keyframes leftMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(50%); }
 }
 
 </style>
@@ -181,13 +186,11 @@ body {
     <a href="#">Meet Your Groomer</a>
 </div>
 
-<div class="border-text top-border">
-Welcome to J’s Pet Palace — Where Every Pet Feels Like Family • Welcome to J’s Pet Palace — Where Every Pet Feels Like Family •
-</div>
-
-<div class="border-text bottom-border">
-Welcome to J’s Pet Palace — Where Every Pet Feels Like Family • Welcome to J’s Pet Palace — Where Every Pet Feels Like Family •
-</div>
+<!-- SCROLL TEXT PATH -->
+<div class="scroll-path top">Welcome to J’s Pet Palace • Welcome to J’s Pet Palace •</div>
+<div class="scroll-path right">Welcome to J’s Pet Palace • Welcome to J’s Pet Palace •</div>
+<div class="scroll-path bottom">Welcome to J’s Pet Palace • Welcome to J’s Pet Palace •</div>
+<div class="scroll-path left">Welcome to J’s Pet Palace • Welcome to J’s Pet Palace •</div>
 
 <div class="side-image">
     <img src="images/main-image.png">
@@ -198,37 +201,31 @@ Welcome to J’s Pet Palace — Where Every Pet Feels Like Family • Welcome to
     <div class="main-banner"></div>
     <div class="sub-banner"></div>
 
-    <!-- FLOW TEXT (SCROLL WITH PAGE) -->
-    <div class="flow-text">
-
+    <!-- MESSAGE -->
+    <div class="section-box">
         <div>I look forward to pampering</div>
         <div>your furry friends</div>
         <div>and providing them with</div>
         <div>the exceptional care they deserve</div>
-
         <div>Whether it's a simple nail trim</div>
         <div>or a full groom</div>
-
         <div>I'm here to make your pet</div>
         <div>look and feel their best</div>
-
         <div>Thank you for choosing me</div>
-        <div>for your pet grooming needs</div>
+    </div>
 
-        <div class="services">
-            <div><strong>Services Offered</strong></div>
-
-            <div>Full Groom</div>
-            <div>Bath & Brush</div>
-            <div>Ear Cleaning</div>
-            <div>Nail Trim / File</div>
-            <div>Haircuts</div>
-            <div>Bows (upon request)</div>
-            <div>Deshed Bath</div>
-            <div>Oatmeal Bath</div>
-            <div>Oxy Bath</div>
-        </div>
-
+    <!-- SERVICES -->
+    <div class="section-box">
+        <div class="services-title">Services Offered</div>
+        <div>Full Groom</div>
+        <div>Bath & Brush</div>
+        <div>Ear Cleaning</div>
+        <div>Nail Trim / File</div>
+        <div>Haircuts</div>
+        <div>Bows (upon request)</div>
+        <div>Deshed Bath</div>
+        <div>Oatmeal Bath</div>
+        <div>Oxy Bath</div>
     </div>
 
     <div class="video">
