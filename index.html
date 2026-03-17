@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+* {<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -10,7 +10,15 @@
 
 <style>
 
-* {
+.top-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.top-image img {
+    width: 200px;
+}
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -22,7 +30,7 @@ body {
     overflow-x: hidden;
 
     /* subtle pink → black fade */
-    background: linear-gradient(to right, #fe14ca20 0%, black 25%);
+    background: linear-gradient(to right, #fe14ca 0%, black 25%);
 }
 
 /* NAV */
@@ -55,17 +63,6 @@ body {
     margin: auto;
 }
 
-/* SIDE IMAGE */
-.side-image {
-    position: fixed;
-    right: 10px;
-    top: 120px;
-    width: 180px;
-}
-
-.side-image img {
-    width: 100%;
-}
 
 /* BANNERS */
 .main-banner {
@@ -198,6 +195,10 @@ body {
 
 <div class="container">
 
+    <div class="top-image">
+    <img src="images/main-image.png" alt="Main Image">
+</div>
+    
     <div class="main-banner"></div>
     <div class="sub-banner"></div>
 
