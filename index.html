@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
+
 * {
     margin: 0;
     padding: 0;
@@ -19,11 +20,12 @@ body {
     font-family: 'Cinzel Decorative', serif;
     color: #fff;
     overflow-x: hidden;
-    /* subtle pink (left) → black (right) */
+
+    /* subtle pink → black fade */
     background: linear-gradient(to right, rgba(254,20,202,0.2) 0%, black 30%);
 }
 
-/* NAVBAR */
+/* NAV */
 .navbar {
     position: fixed;
     top: 0;
@@ -35,6 +37,7 @@ body {
     border-bottom: 1px solid #fe14ca;
     z-index: 1000;
 }
+
 .navbar a {
     color: #fe14ca;
     text-decoration: none;
@@ -52,28 +55,45 @@ body {
     margin: auto;
 }
 
+/* IMAGE PLACEHOLDERS */
+.placeholder {
+    border: 2px dashed #fe14ca;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fe14ca;
+    font-size: 14px;
+    text-align: center;
+}
+
 /* TOP IMAGE */
 .top-image {
     text-align: center;
     margin-bottom: 20px;
 }
-.top-image img {
+
+.top-image .placeholder {
     width: 200px;
+    height: 200px;
+    margin: auto;
 }
 
 /* BANNERS */
-.main-banner {
+.main-banner .placeholder {
     height: 160px;
-    border: 1px solid #fe14ca;
-    margin-bottom: 15px;
-}
-.sub-banner {
-    height: 90px;
-    border: 1px solid #fe14ca;
-    margin-bottom: 30px;
 }
 
-/* SECTION BOXES */
+.sub-banner .placeholder {
+    height: 90px;
+}
+
+.main-banner,
+.sub-banner {
+    margin-bottom: 20px;
+}
+
+/* SECTION BOX */
 .section-box {
     border: 1px solid #fe14ca;
     padding: 20px;
@@ -81,6 +101,7 @@ body {
     width: 75%;
     text-align: center;
 }
+
 .section-box div {
     margin: 10px 0;
     font-size: 16px;
@@ -90,15 +111,15 @@ body {
 }
 
 /* VIDEO */
-.video {
-    margin: 40px 0;
-    text-align: center;
+.video .placeholder {
+    height: 200px;
 }
 
-/* LOGO BOTTOM */
-.logo {
-    margin: 40px 0;
-    text-align: center;
+/* LOGO */
+.logo .placeholder {
+    width: 200px;
+    height: 100px;
+    margin: auto;
 }
 
 /* FOOTER */
@@ -115,21 +136,21 @@ body {
     bottom: 20px;
     right: 20px;
     background: #fe14ca;
-    color: #000;
+    color: black;
     border: none;
     padding: 12px;
     cursor: pointer;
 }
 
-/* BORDER SCROLL TEXT */
+/* BORDER TEXT */
 .scroll-path {
     position: fixed;
     font-size: 11px;
-    color: #fff;
+    color: white;
     text-shadow: 0 0 2px #fe14ca;
     white-space: nowrap;
-    pointer-events: none;
 }
+
 .top { top: 0; left: 0; animation: topMove 40s linear infinite; }
 .right { right: 0; top: 0; writing-mode: vertical-rl; animation: rightMove 40s linear infinite; }
 .bottom { bottom: 0; right: 0; animation: bottomMove 40s linear infinite; }
@@ -139,18 +160,22 @@ body {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
 }
+
 @keyframes rightMove {
     from { transform: translateY(0); }
     to { transform: translateY(-50%); }
 }
+
 @keyframes bottomMove {
     from { transform: translateX(0); }
     to { transform: translateX(50%); }
 }
+
 @keyframes leftMove {
     from { transform: translateY(0); }
     to { transform: translateY(50%); }
 }
+
 </style>
 </head>
 
@@ -164,7 +189,7 @@ body {
     <a href="#">Meet Your Groomer</a>
 </div>
 
-<!-- border text -->
+<!-- BORDER TEXT -->
 <div class="scroll-path top">Welcome to J’s Pet Palace • Welcome to J’s Pet Palace •</div>
 <div class="scroll-path right">Welcome to J’s Pet Palace • Welcome to J’s Pet Palace •</div>
 <div class="scroll-path bottom">Welcome to J’s Pet Palace • Welcome to J’s Pet Palace •</div>
@@ -172,16 +197,21 @@ body {
 
 <div class="container">
 
-    <!-- top image -->
+    <!-- TOP IMAGE -->
     <div class="top-image">
-        <img src="images/main-image.png" alt="Main Image">
+        <div class="placeholder">Main Image / Logo</div>
     </div>
 
-    <!-- banners -->
-    <div class="main-banner"></div>
-    <div class="sub-banner"></div>
+    <!-- BANNERS -->
+    <div class="main-banner">
+        <div class="placeholder">Main Banner</div>
+    </div>
 
-    <!-- message -->
+    <div class="sub-banner">
+        <div class="placeholder">Sub Banner</div>
+    </div>
+
+    <!-- MESSAGE -->
     <div class="section-box">
         <div>I look forward to pampering</div>
         <div>your furry friends</div>
@@ -194,7 +224,7 @@ body {
         <div>Thank you for choosing me</div>
     </div>
 
-    <!-- services -->
+    <!-- SERVICES -->
     <div class="section-box">
         <div><strong>Services Offered</strong></div>
         <div>Full Groom</div>
@@ -208,20 +238,20 @@ body {
         <div>Oxy Bath</div>
     </div>
 
-    <!-- video -->
+    <!-- VIDEO -->
     <div class="video">
-        <video width="100%" controls>
-            <source src="videos/sample.mp4" type="video/mp4">
-        </video>
+        <div class="placeholder">Video Placeholder</div>
     </div>
 
-    <!-- bottom logo -->
+    <!-- LOGO -->
     <div class="logo">
-        <img src="images/logo.png" width="200" alt="Logo">
+        <div class="placeholder">Bottom Logo</div>
     </div>
 
-    <!-- extra banner -->
-    <div class="sub-banner"></div>
+    <!-- EXTRA BANNER -->
+    <div class="sub-banner">
+        <div class="placeholder">Extra Banner</div>
+    </div>
 
 </div>
 
@@ -229,7 +259,7 @@ body {
     Instagram | Facebook
 </div>
 
-<button id="topBtn" onclick="topFunction()">Top</button>
+<button onclick="topFunction()" id="topBtn">Top</button>
 
 <script>
 function topFunction() {
