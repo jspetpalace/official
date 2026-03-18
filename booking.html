@@ -105,16 +105,28 @@ th { background: #111; color: #fe14ca; }
 
        <!-- CALENDAR BOOKING BOX -->
     <div class="section-box">
-        <div><strong>Book Your Appointment</strong></div>
-        
-        <div style="margin-top: 30px;">
-            <!-- THIS BUTTON WILL ALWAYS SHOW UP AND MATCHES YOUR NEON PINK STYLE -->
-            <a href="https://calendar.google.com" 
-               target="_blank" 
-               style="display: inline-block; padding: 18px 35px; background-color: #fe14ca; color: #000; text-decoration: none; font-weight: bold; border-radius: 10px; box-shadow: 0 0 15px #fe14ca; font-size: 18px; text-transform: uppercase; letter-spacing: 1px;">
-               Click Here to Choose Your Time
-            </a>
-        </div>
+    <div><strong>Book Your Appointment</strong></div>
+    
+    <!-- This container fixes the 403 error by forcing responsive height -->
+    <div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; max-width: 100%; border-radius: 8px; margin-top: 15px; background: white;">
+        <iframe 
+            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1HK3SKyBn6uDoJ968DpZv_f7RSUv9oziCs8WpE60fc9wzZIumDI-vzCse37CfAxRjw1v86_Keg?gv=true" 
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Fallback link in case their specific browser still blocks the frame -->
+    <div style="margin-top: 15px;">
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1HK3SKyBn6uDoJ968DpZv_f7RSUv9oziCs8WpE60fc9wzZIumDI-vzCse37CfAxRjw1v86_Keg?gv=true" 
+           target="_blank" 
+           style="color: #fe14ca; font-size: 14px; text-decoration: underline;">
+           Trouble viewing? Click here to book in a new window.
+        </a>
+    </div>
+</div>
+
+    
  </script>   
         <div style="font-size: 13px; margin-top: 20px; opacity: 0.8; color: #fff;">
             (Opens in a new window for secure booking)
