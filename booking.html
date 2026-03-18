@@ -104,24 +104,24 @@ th { background: #111; color: #fe14ca; }
     </div>
 
     <!-- CALENDAR BOOKING BOX -->
+       <!-- CALENDAR BOOKING BOX -->
     <div class="section-box">
         <div><strong>Book Your Appointment</strong></div>
-        <div style="margin-top: 25px;">
-            <!-- Google Calendar Appointment Scheduling begin -->
-            <script src="https://calendar.google.com" async></script>
-            <script>
-            (function() {
-              var target = document.currentScript;
-              window.addEventListener('load', function() {
-                calendar.schedulingButton.load({
-                  url: 'https://calendar.google.com',
-                  color: '#fe14ca',
-                  label: 'Click Here to Choose Your Time',
-                  target,
-                });
-              });
-            })();
-            </script>
+        
+        <div style="margin-top: 30px;">
+            <!-- THIS BUTTON WILL ALWAYS SHOW UP AND MATCHES YOUR NEON PINK STYLE -->
+            <a href="https://calendar.google.com" 
+               target="_blank" 
+               style="display: inline-block; padding: 18px 35px; background-color: #fe14ca; color: #000; text-decoration: none; font-weight: bold; border-radius: 10px; box-shadow: 0 0 15px #fe14ca; font-size: 18px; text-transform: uppercase; letter-spacing: 1px;">
+               Click Here to Choose Your Time
+            </a>
+        </div>
+
+        <div style="font-size: 13px; margin-top: 20px; opacity: 0.8; color: #fff;">
+            (Opens in a new window for secure booking)
+        </div>
+    </div>
+
             <!-- end Google Calendar Appointment Scheduling -->
         </div>
         <div style="font-size: 13px; margin-top: 20px; opacity: 0.9; color: #fff;">
